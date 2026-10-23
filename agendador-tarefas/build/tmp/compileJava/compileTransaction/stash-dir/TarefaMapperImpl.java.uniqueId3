@@ -1,0 +1,85 @@
+package com.rodrigo.agendador_tarefas.business.mapper;
+
+import com.rodrigo.agendador_tarefas.business.dto.TarefaDTO;
+import com.rodrigo.agendador_tarefas.infrastructure.entity.TarefaEntity;
+import java.util.ArrayList;
+import java.util.List;
+import javax.annotation.processing.Generated;
+import org.springframework.stereotype.Component;
+
+@Generated(
+    value = "org.mapstruct.ap.MappingProcessor",
+    date = "2026-10-22T19:27:58-0300",
+    comments = "version: 1.6.3, compiler: IncrementalProcessingEnvironment from gradle-java-compiler-worker-9.8.1.jar, environment: Java 21.0.12.1 (Azul Systems, Inc.)"
+)
+@Component
+public class TarefaMapperImpl implements TarefaMapper {
+
+    @Override
+    public TarefaEntity paraTarefaEntity(TarefaDTO tarefaDTO) {
+        if ( tarefaDTO == null ) {
+            return null;
+        }
+
+        TarefaEntity.TarefaEntityBuilder tarefaEntity = TarefaEntity.builder();
+
+        tarefaEntity.id( tarefaDTO.getId() );
+        tarefaEntity.nomeDaTarefa( tarefaDTO.getNomeDaTarefa() );
+        tarefaEntity.descricao( tarefaDTO.getDescricao() );
+        tarefaEntity.dataCriacao( tarefaDTO.getDataCriacao() );
+        tarefaEntity.dataEvento( tarefaDTO.getDataEvento() );
+        tarefaEntity.emailUsuario( tarefaDTO.getEmailUsuario() );
+        tarefaEntity.dataAlteracao( tarefaDTO.getDataAlteracao() );
+        tarefaEntity.statusNotificacaoEnum( tarefaDTO.getStatusNotificacaoEnum() );
+
+        return tarefaEntity.build();
+    }
+
+    @Override
+    public TarefaDTO paraTarefaDTO(TarefaEntity tarefaEntity) {
+        if ( tarefaEntity == null ) {
+            return null;
+        }
+
+        TarefaDTO.TarefaDTOBuilder tarefaDTO = TarefaDTO.builder();
+
+        tarefaDTO.id( tarefaEntity.getId() );
+        tarefaDTO.nomeDaTarefa( tarefaEntity.getNomeDaTarefa() );
+        tarefaDTO.descricao( tarefaEntity.getDescricao() );
+        tarefaDTO.dataCriacao( tarefaEntity.getDataCriacao() );
+        tarefaDTO.dataEvento( tarefaEntity.getDataEvento() );
+        tarefaDTO.emailUsuario( tarefaEntity.getEmailUsuario() );
+        tarefaDTO.dataAlteracao( tarefaEntity.getDataAlteracao() );
+        tarefaDTO.statusNotificacaoEnum( tarefaEntity.getStatusNotificacaoEnum() );
+
+        return tarefaDTO.build();
+    }
+
+    @Override
+    public List<TarefaEntity> paraListaTarefaEntity(List<TarefaDTO> tarefaDTOS) {
+        if ( tarefaDTOS == null ) {
+            return null;
+        }
+
+        List<TarefaEntity> list = new ArrayList<TarefaEntity>( tarefaDTOS.size() );
+        for ( TarefaDTO tarefaDTO : tarefaDTOS ) {
+            list.add( paraTarefaEntity( tarefaDTO ) );
+        }
+
+        return list;
+    }
+
+    @Override
+    public List<TarefaDTO> paraListaTarefaDTO(List<TarefaEntity> tarefaEntities) {
+        if ( tarefaEntities == null ) {
+            return null;
+        }
+
+        List<TarefaDTO> list = new ArrayList<TarefaDTO>( tarefaEntities.size() );
+        for ( TarefaEntity tarefaEntity : tarefaEntities ) {
+            list.add( paraTarefaDTO( tarefaEntity ) );
+        }
+
+        return list;
+    }
+}
