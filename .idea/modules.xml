@@ -3,6 +3,8 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/agendador-tarefas.iml" filepath="$PROJECT_DIR$/.idea/agendador-tarefas.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/com.rodrigo.agendador-tarefas.main.iml" filepath="$PROJECT_DIR$/.idea/modules/com.rodrigo.agendador-tarefas.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/com.rodrigo.agendador-tarefas.test.iml" filepath="$PROJECT_DIR$/.idea/modules/com.rodrigo.agendador-tarefas.test.iml" />
     </modules>
   </component>
 </project>
