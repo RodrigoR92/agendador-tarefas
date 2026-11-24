@@ -9,7 +9,7 @@ import org.springframework.stereotype.Component;
 
 @Generated(
     value = "org.mapstruct.ap.MappingProcessor",
-    date = "2026-10-22T19:52:00-0300",
+    date = "2026-11-18T17:00:31-0300",
     comments = "version: 1.6.3, compiler: IncrementalProcessingEnvironment from gradle-java-compiler-worker-9.8.1.jar, environment: Java 21.0.12.1 (Azul Systems, Inc.)"
 )
 @Component
@@ -24,10 +24,10 @@ public class TarefaMapperImpl implements TarefaMapper {
         TarefaEntity.TarefaEntityBuilder tarefaEntity = TarefaEntity.builder();
 
         tarefaEntity.id( tarefaDTO.getId() );
+        tarefaEntity.dataEvento( tarefaDTO.getDataEvento() );
+        tarefaEntity.dataCriacao( tarefaDTO.getDataCriacao() );
         tarefaEntity.nomeDaTarefa( tarefaDTO.getNomeDaTarefa() );
         tarefaEntity.descricao( tarefaDTO.getDescricao() );
-        tarefaEntity.dataCriacao( tarefaDTO.getDataCriacao() );
-        tarefaEntity.dataEvento( tarefaDTO.getDataEvento() );
         tarefaEntity.emailUsuario( tarefaDTO.getEmailUsuario() );
         tarefaEntity.dataAlteracao( tarefaDTO.getDataAlteracao() );
         tarefaEntity.statusNotificacaoEnum( tarefaDTO.getStatusNotificacaoEnum() );
